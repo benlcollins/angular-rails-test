@@ -3,7 +3,6 @@ class Api::EmployeesController < ApplicationController
 
 	def index
 		serialized_employees = ActiveModel::ArraySerializer.new(Employee.all, each_serializer: EmployeeSerializer)
-		# debugger
 		render json: serialized_employees
 	end
 end
